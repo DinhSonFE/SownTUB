@@ -1,0 +1,28 @@
+<svg width="248" height="52" viewBox="0 0 248 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Selected" clip-path="url(#clip0_1357_37070)">
+<g id="Ellipse 2" filter="url(#filter0_f_1357_37070)">
+<ellipse cx="124" cy="4" rx="79" ry="13" fill="#8015A7"/>
+</g>
+<g id="Separator">
+<mask id="path-2-inside-1_1357_37070" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5H248H0Z"/>
+</mask>
+<path d="M0 1.5H248V-0.5H0V1.5Z" fill="url(#paint0_linear_1357_37070)" style="mix-blend-mode:overlay" mask="url(#path-2-inside-1_1357_37070)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_1357_37070" x="-2.62238" y="-56.6224" width="253.245" height="121.245" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="23.8112" result="effect1_foregroundBlur_1357_37070"/>
+</filter>
+<linearGradient id="paint0_linear_1357_37070" x1="246.728" y1="4.82418e-10" x2="0" y2="-0.000150248" gradientUnits="userSpaceOnUse">
+<stop offset="0.0890323" stop-color="white" stop-opacity="0"/>
+<stop offset="0.500645" stop-color="white"/>
+<stop offset="0.885161" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_1357_37070">
+<rect width="248" height="52" fill="white"/>
+</clipPath>
+</defs>
+</svg>
