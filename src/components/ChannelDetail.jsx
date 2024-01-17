@@ -13,6 +13,7 @@ function ChannelDetail() {
   const [videos, setVideos] = useState(null);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(true);
+
   useEffect(() => {
     setLoading(true);
     if (channelId) {
@@ -25,7 +26,7 @@ function ChannelDetail() {
       setLoading(false);
     }
   }, [channelId]);
-  console.log(channel);
+
   return (
     <div
       className={`w-screen grid-cols-1 overflow-scroll h-screen grid grid-rows-layout-main-rows ${

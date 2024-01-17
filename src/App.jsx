@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchFeed from "./components/SearchFeed";
 import VideoDetail from "./components/VideoDetail";
 import ChannelDetail from "./components/ChannelDetail";
+
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +12,7 @@ function App() {
         <Route path="/search/:searchTerm" element={<SearchFeed />} />
         <Route path="/video/:id" element={<VideoDetail />} />
         <Route path="/channel/:channelId" element={<ChannelDetail />} />
+        <Route path="*" element={<Feed />} />
       </Routes>
     </BrowserRouter>
   );

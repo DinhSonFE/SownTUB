@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function VideoCard({ data, channelInfo }) {
   const navigate = useNavigate();
+
   const onHandleClickItem = () => {
     navigate(`/video/${data?.id?.videoId}`);
   };
