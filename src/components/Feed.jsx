@@ -21,10 +21,10 @@ function Feed() {
 
   return (
     <div
-      className={`w-screen h-screen  grid grid-rows-layout-main-rows ${
+      className={`w-screen grid-cols-1 h-screen  grid grid-rows-layout-main-rows ${
         show
-          ? "grid-cols-layout-main-cols"
-          : "grid-cols-layout-main-cols-hide-menu"
+          ? "md:grid-cols-layout-main-cols"
+          : "md:grid-cols-layout-main-cols-hide-menu"
       } bg-side_menu_bg`}
     >
       <SideMenu show={show} setShow={setShow} />

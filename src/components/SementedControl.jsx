@@ -9,7 +9,7 @@ function SementedControl({ selectedCategory, setSelectedCategory, show }) {
     setSelectedCategory(e.currentTarget.getAttribute("data-value"));
   };
   return (
-    <ul className="flex items-center gap-6 overflow-x-scroll px-10 py-4 bg-bg_semented">
+    <ul className="flex items-center gap-2 md:gap-6 overflow-x-scroll p-2 md:px-10 py-4 bg-bg_semented">
       {categories.map((item) => (
         <li
           onClick={handleClickItem}
@@ -18,8 +18,8 @@ function SementedControl({ selectedCategory, setSelectedCategory, show }) {
           ref={item.name === selectedCategory ? elementActive : null}
           className={`${
             item.name === selectedCategory
-              ? "text-white text-base opacity-80"
-              : "text-label_color_tertiary text-sm bg-opacity-20"
+              ? "text-white text-sm md:text-base opacity-80"
+              : "text-label_color_tertiary text-xs md:text-sm bg-opacity-20"
           } cursor-pointer text-center relative transition-all bg-purple px-6 py-1 rounded-xl `}
         >
           {item.name}

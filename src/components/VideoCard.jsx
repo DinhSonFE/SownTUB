@@ -12,7 +12,7 @@ function VideoCard({ data, channelInfo }) {
       onClick={onHandleClickItem}
       className=" rounded-2xl hover:scale-105 transition-all hover:shadow-md hover:shadow-[#8015a7] cursor-pointer"
     >
-      <div className="w-full h-[209px] rounded-tr-2xl rounded-tl-2xl overflow-hidden">
+      <div className="w-full h-[160px] md:h-[209px] rounded-tr-2xl rounded-tl-2xl overflow-hidden">
         <img
           className="w-full h-full object-cover"
           src={data?.snippet?.thumbnails?.high?.url}
@@ -28,13 +28,13 @@ function VideoCard({ data, channelInfo }) {
           />
         </div>
         <div className="flex flex-col gap-1 ">
-          <h3 className="text-white text-base font-semibold">
+          <h3 className="text-white text-sm md:text-base font-semibold">
             {data?.snippet?.title}
           </h3>
-          <span className="text-label_color_tertiary text-sm font-semibold">
+          <span className="text-label_color_tertiary text-xs md:text-sm font-semibold">
             {data.snippet.channelTitle}
           </span>
-          <span className="text-label_color_tertiary text-xs font-normal">
+          <span className="text-label_color_tertiary text-[10px] md:text-xs font-normal">
             {useCacutimer(data?.snippet?.publishedAt)}
           </span>
         </div>

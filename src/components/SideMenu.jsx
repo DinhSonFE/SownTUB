@@ -12,7 +12,7 @@ function SideMenu({ show, setShow }) {
   };
   return (
     <div
-      className={`row-start-1 row-end-4 bg-side_menu_bg w-auto flex flex-col gap-6 transition-all text-white h-screen border-r border-white border-opacity-5 ${
+      className={`hidden md:flex row-start-1 row-end-4 bg-side_menu_bg w-auto flex-col gap-6 transition-all text-white h-screen border-r border-white border-opacity-5 ${
         show ? "" : "w-[60px] transition-all"
       }`}
     >
@@ -40,7 +40,7 @@ function SideMenu({ show, setShow }) {
             <li
               onClick={(e) => handleClickItem(e, item.name)}
               className={`${
-                show ? "pl-5 " : "px-0 justify-center"
+                show ? "px-5 " : "px-0 justify-center"
               } h-14 gap-x-5 flex items-center relative py-3 cursor-pointer before:absolute before:w-full before:h-[1px] before:bg-line_bg before:top-0 before:left-0 ${
                 location === item.name.toLowerCase()
                   ? "after:w-full after:h-full after:bg-active_item after:absolute"

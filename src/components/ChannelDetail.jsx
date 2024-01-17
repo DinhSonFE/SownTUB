@@ -28,15 +28,17 @@ function ChannelDetail() {
   console.log(channel);
   return (
     <div
-      className={`w-screen h-screen overflow-hidden  grid grid-rows-layout-main-rows ${
+      className={`w-screen grid-cols-1 overflow-scroll h-screen grid grid-rows-layout-main-rows ${
         show
-          ? "grid-cols-layout-main-cols"
-          : "grid-cols-layout-main-cols-hide-menu"
+          ? "md:grid-cols-layout-main-cols"
+          : "md:grid-cols-layout-main-cols-hide-menu"
       } bg-side_menu_bg`}
     >
       <SideMenu show={show} setShow={setShow} />
-      <SearchBar></SearchBar>
-      <div className="w-full h-[300px] relative ">
+      <div className="fixed top-0 left-0 right-0 bg-black z-50">
+        <SearchBar></SearchBar>
+      </div>
+      <div className="w-full  h-[160px] md:h-[300px] relative ">
         <img
           className="w-full h-full object-cover relative "
           src={channel?.brandingSettings?.image?.bannerExternalUrl}
@@ -49,26 +51,26 @@ function ChannelDetail() {
             alt=""
           />
           <div className="flex flex-col">
-            <h2 className="text-white text-lg font-medium">
+            <h2 className="text-white text-sm md:text-lg font-medium">
               {channel?.snippet?.localized?.title}
             </h2>
-            <span className="text-label_color_tertiary text-sm">
+            <span className="text-label_color_tertiary text-xs md:text-sm">
               {channel?.snippet?.customUrl}
             </span>
-            <span className="text-label_color_tertiary text-sm">
+            <span className="text-label_color_tertiary text-xs md:text-sm">
               {useFormatSub(channel?.statistics?.subscriberCount)} Subscriptions
             </span>
           </div>
         </div>
         <div className="absolute bottom-6 right-6">
-          <button className=" bottom-6 right-0 inline-flex gap-4 items-center px-4 py-2 bg-red transition ease-in-out delay-75 hover:bg-red-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110">
-            <img src={BellIcon} alt="" />
+          <button className=" bottom-6 right-0 inline-flex gap-4 items-center px-2 md:px-4 md:py-2 py-1 bg-red transition ease-in-out delay-75 hover:bg-red-700 text-white text-xs md:text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110">
+            <img className="w-4 h-4 md:w-6 md:h-6" src={BellIcon} alt="" />
             Subscriber
           </button>
         </div>
       </div>
-      <div className="w-full h-full overflow-scroll ">
-        <h4 className="text-label_color_tertiary text-2xl font-bold p-6">
+      <div className="w-full h-full md:overflow-scroll ">
+        <h4 className="text-label_color_tertiary text-base md:text-2xl font-bold p-6">
           Videos
         </h4>
         <Videos videos={videos} loading={loading} />

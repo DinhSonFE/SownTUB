@@ -68,8 +68,8 @@ function VideoDetail() {
   };
 
   return (
-    <div className="w-screen h-screen bg-side_menu_bg overflow-scroll ">
-      <div className="fixed top-0 left-0 right-0 z-50 bg-side_menu_bg flex justify-between items-center pl-6">
+    <div className="w-screen h-screen bg-side_menu_bg overflow-scroll overflow-x-hidden">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-side_menu_bg flex justify-between items-center px-2 md:pl-6">
         <div className="cursor-pointer">
           <Link to="/home" className="w-[10%] ">
             <img src={Logo} className="w-12 " alt="" />
@@ -80,8 +80,8 @@ function VideoDetail() {
           <SearchBar />
         </div>
       </div>
-      <div className=" pl-6 flex mt-[56px] ">
-        <div className="w-[80%] ">
+      <div className=" px-2 md:pl-6 flex mt-[56px] flex-col md:flex-row ">
+        <div className="w-full md:w-[80%] ">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${id}`}
             className="react-player "
@@ -89,13 +89,13 @@ function VideoDetail() {
           />
           <div className="py-2 px-4 flex flex-col gap-4 bg-side_menu_bg">
             {/* Title */}
-            <h3 className="text-white font-semibold text-xl">
+            <h3 className="text-white font-semibold text-base md:text-xl">
               {video?.snippet?.localized?.title}
             </h3>
             {/* ----- */}
-            <div className="flex justify-between ">
+            <div className="flex justify-between gap-5 md:gap-0 flex-col md:flex-row ">
               {/* Channel */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 md:justify-start justify-between">
                 <div
                   className="flex gap-2 cursor-pointer"
                   onClick={() => {
@@ -108,10 +108,10 @@ function VideoDetail() {
                     alt=""
                   />
                   <div className="flex flex-col">
-                    <span className="font-bold text-base text-label_color_tertiary">
+                    <span className="font-bold text-sm md:text-base text-label_color_tertiary">
                       {video?.snippet?.channelTitle}
                     </span>
-                    <span className="text-xs text-label_color_tertiary">
+                    <span className="text-[10px] text-label_color_tertiary">
                       2,12 N người đăng ký
                     </span>
                   </div>
@@ -122,20 +122,34 @@ function VideoDetail() {
               </div>
 
               {/* Like DisLike Share */}
-              <div className="flex rounded-full border border-purple border-opacity-70 px-4 py-2">
+              <div className="flex rounded-full justify-between md:justify-start border border-purple border-opacity-70 px-4 py-2">
                 <div className="flex items-center px-5 border-r border-purple  cursor-pointer gap-4">
-                  <img src={LikeIcon} alt="" />
-                  <span className="text-label_color_tertiary">
+                  <img
+                    src={LikeIcon}
+                    alt=""
+                    className="w-3 h-3 md:w-4 md:h4 object-cover"
+                  />
+                  <span className="text-label_color_tertiary text-xs md:text-sm">
                     {video?.statistics?.likeCount}
                   </span>
                 </div>
-                <div className="flex items-center px-5  cursor-pointer gap-4">
-                  <img src={DislikeIcon} alt="" />
-                  <span className="text-label_color_tertiary"></span>
+                <div className="flex items-center px-5 cursor-pointer gap-4">
+                  <img
+                    className="w-3 h-3 md:w-4 md:h4 object-cover"
+                    src={DislikeIcon}
+                    alt=""
+                  />
+                  <span className="text-label_color_tertiary text-xs md:text-sm"></span>
                 </div>
                 <div className="flex items-center px-5 border-l border-purple cursor-pointer gap-4">
-                  <img src={BellIcon} alt="" />
-                  <span className="text-label_color_tertiary">Share</span>
+                  <img
+                    className="w-3 h-3 md:w-4 md:h4 object-cover"
+                    src={BellIcon}
+                    alt=""
+                  />
+                  <span className="text-label_color_tertiary text-xs md:text-sm">
+                    Share
+                  </span>
                 </div>
               </div>
             </div>
@@ -163,7 +177,7 @@ function VideoDetail() {
                   onClick={handleClickShowMore}
                   className={`${
                     showMore ? "static" : "absolute"
-                  } bottom-0 left-0 right-0 bg-black text-label_color_tertiary text-sm py-2 hover:bg-opacity-80 hover:text-white`}
+                  } bottom-0 left-0 right-0 bg-black text-label_color_tertiary text-xs md:text-sm py-2 hover:bg-opacity-80 hover:text-white`}
                 >
                   {showMore ? "Hide More" : "Show More"}
                 </button>
@@ -175,14 +189,16 @@ function VideoDetail() {
           </div>
         </div>
         {/* ------ */}
-        <div className="w-[20%]">
-          <SementedControl />
-          <ul className="pl-4 pt-2 flex flex-col gap-6">
+        <div className="w-full md:w-[20%]">
+          <div className="hidden md:static">
+            <SementedControl />
+          </div>
+          <ul className="px-0 md:pl-4 p-10 md:pt-2 flex flex-col gap-y-6 w-screen overflow-hidden">
             {listVideo?.map((item) => (
               <li
                 onClick={() => handleClickVideo(item?.id?.videoId)}
                 key={item?.id?.videoId}
-                className="rounded-tl-lg rounded-bl-lg hover:scale-105 transition-all hover:shadow-md hover:shadow-[#8015a7] h-[100px] flex  items-center gap-2  bg-video_card_bg_1 cursor-pointer relative"
+                className="rounded-tl-lg rounded-bl-lg hover:scale-105 transition-all hover:shadow-md hover:shadow-[#8015a7] overflow-hidden w-full h-[100px] flex  items-center gap-2  bg-video_card_bg_1 cursor-pointer"
               >
                 <div className="flex h-full flex-shrink-0 ">
                   <img
@@ -191,7 +207,7 @@ function VideoDetail() {
                     alt=""
                   />
                 </div>
-                <div className="flex flex-col  after:w-full after:h-[1px] after:absolute after:bg-line_bg after:top-0 after:left-0">
+                <div className="flex flex-col w-full overflow-hidden ">
                   <h5 className="text-label_color_secondary text-sm truncate">
                     {item?.snippet?.title}
                   </h5>

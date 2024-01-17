@@ -19,11 +19,11 @@ function SearchBar() {
     }
   }, [navigate, searchTerm]);
   return (
-    <div className="flex items-center justify-between px-6 py-2">
+    <div className="flex items-center justify-between p-2 md:px-6 py-2">
       <form
         action="submit"
         onSubmit={onHandleSubmit}
-        className="w-[442px] h-10 pl-4 pr-1 py-1p flex justify-between items-center gap-2 bg-search_bg rounded-[40px] border border-white border-opacity-10"
+        className="w-[200px] md:w-[442px] h-10 pl-4 pr-1 py-1p flex justify-between items-center gap-2 bg-search_bg rounded-[40px] border border-white border-opacity-10"
       >
         <input
           value={inputValue}

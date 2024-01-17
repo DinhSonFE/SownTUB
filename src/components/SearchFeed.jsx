@@ -21,16 +21,16 @@ function SearchFeed() {
 
   return (
     <div
-      className={`w-screen h-screen  grid grid-rows-layout-main-rows ${
+      className={`w-screen h-screen grid-cols-1 grid grid-rows-layout-main-rows ${
         show
-          ? "grid-cols-layout-main-cols"
-          : "grid-cols-layout-main-cols-hide-menu"
+          ? "md:grid-cols-layout-main-cols"
+          : "md:grid-cols-layout-main-cols-hide-menu"
       } bg-side_menu_bg`}
     >
       <SideMenu show={show} setShow={setShow} />
       <SearchBar></SearchBar>
-      <div className="h-full w-full flex items-center">
-        <h2 className="text-3xl px-8 text-label_color_tertiary">
+      <div className="h-full w-full flex items-center border-y bg-black border-white border-opacity-10 py-2">
+        <h2 className="text-base md:text-3xl px-8 text-label_color_tertiary">
           {searchTerm}
         </h2>
       </div>

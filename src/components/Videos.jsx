@@ -13,7 +13,7 @@ function Videos({ videos, loading, setLoading }) {
     );
   }
   return (
-    <div className=" grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-10 p-10 h-full overflow-scroll ">
+    <div className=" grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-10 p-4 md:p-10 h-full overflow-scroll ">
       {videos?.map((video) => (
         <VideoCard key={uuidv4()} data={video} />
       ))}
